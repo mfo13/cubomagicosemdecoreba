@@ -5,5 +5,5 @@ const text = await response.text();
 document.getElementById(id).innerHTML = text;
 }
 
-loadComponent("menu","/cubomagicosemdecoreba/components/menu.html");
-loadComponent("footer","cubomagicosemdecoreba/components/footer.html");
+loadComponent("menu","components/menu.html");
+loadComponent("footer","components/footer.html");
