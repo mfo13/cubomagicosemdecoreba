@@ -1,27 +1,29 @@
 body{
     padding-bottom: 40px;
     margin:0;
-    font-family:sans-serif;
+    font-family: 'Inter', sans-serif;;
+    font-size: 16px;
+    line-height: 1.6;
 }
 
 /* barra superior */
 .topbar {
-    background:#000000;
+    background:#ffffff;
     height:50px;
     display:flex;
     align-items:center;
-    padding:0 10px;
+    padding: 10px;
 }
 
 .topbar .logo{
-    color: white;
+    color: rgb(0, 0, 0);
 }
 
 /* botão do menu */
 #menuBtn{
     background:none;
     border:none;
-    color:white;
+    color:rgb(0, 0, 0);
     font-size:22px;
     cursor:pointer;
     margin-right:10px;
@@ -29,16 +31,18 @@ body{
 
 /* sidebar */
 #sidebar{
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
     position:fixed;
     top:0;
     left:0; /* ou pode remover */
-    width:260px;
+    width:280px;
     height:100%;
     background:#000;
     color:white;
-    transform:translateX(-260px);
+    transform:translateX(-280px);
     transition:transform 0.3s ease;
-    padding-top:60px;
+    padding-top:50px;
     z-index:1000;
     overflow-y:auto;
     overflow-x:hidden;
@@ -68,8 +72,9 @@ body{
 
 .sidebar-header{
     padding:15px 20px;
-    font-size:18px;
-    font-weight:bold;
+    font-family: 'Inter', sans-serif;
+    letter-spacing: +0.5px;
+    font-size:22px;
     border-bottom:1px solid #222;
 }
 
@@ -85,10 +90,17 @@ body{
 /* modo desktop */
 @media (min-width:768px){
     body {
-        margin-left:260px;
+        margin-left:280px;
     }
     .topbar{
         display:none;
+    }
+    .layout {
+        display: flex;
+    }
+    main {
+        flex: 1;
+        padding: 20px;
     }
     #sidebar{
         transform:translateX(0); /* ESSENCIAL */
@@ -100,9 +112,7 @@ body{
     #overlay{
         display:none !important;
     }
-    #menuBtn{
-        display:none;
-    }
+    #menuBtn,
     #closeBtn{
         display:none;
     }
@@ -115,7 +125,7 @@ body{
     left:10px;
     background:none;
     border:none;
-    color:white;
+    color:rgb(255, 255, 255);
     font-size:22px;
     cursor:pointer;
 }
@@ -171,12 +181,18 @@ body{
 
 /* seta */
 .arrow{
-    width:8px;
+    /* seta tradicional */
+    /*width:8px;
     height:8px;
     min-width:8px;
     border-right:3px solid white;
     border-bottom:3px solid white;
-    transform:rotate(45deg);
+    transform:rotate(45deg); */
+    /* seta nova */
+    font-weight:bold;
+    font-size: 16px;
+    transform: rotate(-180deg);
+
     transition:transform 0.25s, border-color 0.25s;
     cursor:pointer;
     margin-right:6px; /* ajusta espaçamento */
@@ -184,12 +200,13 @@ body{
 
 /* itens sem submenu */
 .arrow.empty{
-    border:none;
+    border: none;
+    visibility: hidden;
 }
 
 /* seta aberta */
 .menu-item.open > .menu-link > .arrow{
-    transform:rotate(-135deg);
+    transform:rotate(0deg);
 }
 
 /* submenu geral */
@@ -209,7 +226,7 @@ body{
 /* níveis mais profundos */
 .submenu a{
     display:block;
-    padding:6px 20px;
+    padding:4px 20px;
     font-size:0.9em;
     color:white;
     text-decoration:none;
@@ -222,3 +239,70 @@ body{
 .no-link{
     cursor:pointer;
 }
+
+h1 {
+    font-family: 'Inter', sans-serif;
+    font-size: 2rem;
+    letter-spacing: +0.5px;
+    font-weight: 700;
+    color: #9c22c2; /* roxo (combina com seu hover) */
+    margin-top: 20px;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.toggle-arrow {
+    transform: rotate(-180deg);
+    transition: transform 0.3s;
+    font-size: 18px;
+    font-weight: bolder;
+    color:#9c22c2;
+}
+
+[aria-expanded="true"] .toggle-arrow {
+    transform: rotate(0deg);
+}
+
+.toggle-arrow:hover {
+    font-size: 20px;
+}
+
+.titulo_assunto{
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    color: #9c22c2;
+    cursor: pointer;
+    user-select: none;
+}
+
+.titulo_assunto:hover {
+    font-weight: bold;
+}
+
+.link_assunto{
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    color:#9c22c2;
+    text-decoration: none;
+}
+
+.link_assunto:hover{
+    font-weight: bold;
+}
+
+.virapagina{
+    font-size: 28px;
+    color:#9c22c2;
+    text-decoration: none;
+}
+
+.virapagina:hover{
+    color:#9c22c2;
+    font-weight: bold;
+}
+
+#footer{
+    font-family: 'Inter', sans-serif;
+    font-size: small;
+}
+
