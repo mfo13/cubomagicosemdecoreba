@@ -156,40 +156,20 @@ async function initMenu(){
     /* submenus */
     document.querySelectorAll(".has-submenu .menu-link")
     .forEach(link=>{
-        link.onclick = (e)=>{
+        link.onclick=(e)=>{
             const item = link.parentElement;
             const anchor = link.querySelector("a");
 
-            const siblings = item.parentElement.children;
+            item.classList.toggle("open");
 
-            // alterna o estado atual
-            const isOpen = item.classList.toggle("open");
-
-            // fecha irmãos
-            Array.from(siblings).forEach(sib => {
-                if(sib !== item){
-                    sib.classList.remove("open");
-                }
-            });
-
-            // salva estado UMA vez só
-            let state = JSON.parse(localStorage.getItem("menuState")||"{}");
-
-            Array.from(siblings).forEach(sib => {
-                const sibId = sib.dataset.menu;
-                if(sibId){
-                    state[sibId] = false;
-                }
-            });
-
-            const id = item.dataset.menu;
+            const id=item.dataset.menu;
             if(id){
-                state[id] = isOpen;
+                let state=JSON.parse(localStorage.getItem("menuState")||"{}");
+                state[id]=item.classList.contains("open");
+                localStorage.setItem("menuState",JSON.stringify(state));
             }
 
-            localStorage.setItem("menuState", JSON.stringify(state));
-
-            // navegação
+            // Se clicou diretamente no <a>
             if(e.target.tagName === "A" && anchor.href){
                 e.preventDefault();
 

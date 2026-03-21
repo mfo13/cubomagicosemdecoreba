@@ -1,3 +1,4 @@
+/* corpo geral */
 body{
     padding-bottom: 40px;
     margin:0;
@@ -29,7 +30,19 @@ body{
     margin-right:10px;
 }
 
-/* sidebar */
+/* botão fechar menu */
+#closeBtn{
+    position:absolute;
+    top:10px;
+    left:10px;
+    background:none;
+    border:none;
+    color:rgb(255, 255, 255);
+    font-size:22px;
+    cursor:pointer;
+}
+
+/* barra lateral */
 #sidebar{
     font-family: 'Inter', sans-serif;
     font-weight: 400;
@@ -82,7 +95,7 @@ body{
     color: white;
 }
 
-/* mobile → esconde header na sidebar */
+/* celular → esconde header na sidebar */
 .sidebar-header{
     display:none;
 }
@@ -118,19 +131,7 @@ body{
     }
 }
 
-/* botão fechar menu */
-#closeBtn{
-    position:absolute;
-    top:10px;
-    left:10px;
-    background:none;
-    border:none;
-    color:rgb(255, 255, 255);
-    font-size:22px;
-    cursor:pointer;
-}
-
-/* overlay */
+/* overlay do menu*/
 #overlay{
     position:fixed;
     top:0;
@@ -142,17 +143,18 @@ body{
     z-index:900;
 }
 
-/* item ativo */
-.menu a.active{
-    color:#c084fc;
-    font-weight:bold;
-}
 
 /* menu */
 .menu{
     list-style:none;
     padding:0;
     margin:0;
+}
+
+/* item ativo */
+.menu a.active{
+    color:#c084fc;
+    font-weight:bold;
 }
 
 .menu-link{
@@ -167,16 +169,9 @@ body{
 .menu-link a{
     color:white;
     text-decoration:none;
-    flex:1;
+    flex: 1;
     display: block;
     width: 100%;
-}
-
-/* hover */
-.menu-link:hover a,
-.menu-link:hover .arrow{
-    color:#c084fc;
-    border-color:#c084fc;
 }
 
 /* seta */
@@ -188,14 +183,21 @@ body{
     border-right:3px solid white;
     border-bottom:3px solid white;
     transform:rotate(45deg); */
+
     /* seta nova */
     font-weight:bold;
-    font-size: 16px;
+    font-size: 17px;
     transform: rotate(-180deg);
 
     transition:transform 0.25s, border-color 0.25s;
     cursor:pointer;
-    margin-right:6px; /* ajusta espaçamento */
+}
+
+/* hover */
+.menu-link:hover a,
+.menu-link:hover .arrow{
+    color:#c084fc;
+    border-color:#c084fc;
 }
 
 /* itens sem submenu */
@@ -204,16 +206,17 @@ body{
     visibility: hidden;
 }
 
-/* seta aberta */
+/* seta drop aberto */
 .menu-item.open > .menu-link > .arrow{
     transform:rotate(0deg);
+    font-size: 17px;
 }
 
-/* submenu geral */
+/* submenus */
 .submenu{
-    list-style:none;
-    padding-left:16px;
-    max-height:0;
+    font-size: 15px;
+    padding-left: 30px;
+    max-height: 0;
     overflow:hidden;
     transition:max-height 0.3s ease;
 }
@@ -221,36 +224,49 @@ body{
 /* abrir */
 .menu-item.open > .submenu{
     max-height: 2000px;
-}
-
-/* níveis mais profundos */
-.submenu a{
-    display:block;
-    padding:4px 20px;
-    font-size:0.9em;
-    color:white;
-    text-decoration:none;
-}
-
-.submenu a:hover{
-    color:#c084fc;
+    margin-bottom: 10px;
 }
 
 .no-link{
     cursor:pointer;
 }
 
+/* títulos das páginas */
 h1 {
-    font-family: 'Inter', sans-serif;
     font-size: 2rem;
     letter-spacing: +0.5px;
-    font-weight: 700;
+    font-weight: 300;
     color: #9c22c2; /* roxo (combina com seu hover) */
     margin-top: 20px;
     margin-bottom: 40px;
     text-align: center;
 }
 
+/* subtítuloas das páginas */
+h1 {
+    letter-spacing: +0.5px;
+    color: #9c22c2; /* roxo (combina com seu hover) */
+    margin-top: 20px;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+/* subtítulos das páginas */
+h2 {
+    font-size: 1.5rem;
+    font-weight: 100;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+/* títulos do texto */
+h3 {
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+/* seta do menu da página*/
 .toggle-arrow {
     transform: rotate(-180deg);
     transition: transform 0.3s;
@@ -259,6 +275,7 @@ h1 {
     color:#9c22c2;
 }
 
+/* menu aberto */
 [aria-expanded="true"] .toggle-arrow {
     transform: rotate(0deg);
 }
@@ -267,9 +284,8 @@ h1 {
     font-size: 20px;
 }
 
+/* item do menu da página */
 .titulo_assunto{
-    font-family: 'Inter', sans-serif;
-    font-size: 16px;
     color: #9c22c2;
     cursor: pointer;
     user-select: none;
@@ -279,8 +295,8 @@ h1 {
     font-weight: bold;
 }
 
+/* links do menu da página */
 .link_assunto{
-    font-family: 'Inter', sans-serif;
     font-size: 14px;
     color:#9c22c2;
     text-decoration: none;
@@ -290,6 +306,7 @@ h1 {
     font-weight: bold;
 }
 
+/* links para mudar de página */
 .virapagina{
     font-size: 28px;
     color:#9c22c2;
@@ -301,6 +318,17 @@ h1 {
     font-weight: bold;
 }
 
+/* links gerais */
+a {
+    color:#9c22c2;
+    text-decoration: none;
+}
+
+a:hover {
+    font-weight: bold;
+}
+
+/* rodapé das páginas */
 #footer{
     font-family: 'Inter', sans-serif;
     font-size: small;
