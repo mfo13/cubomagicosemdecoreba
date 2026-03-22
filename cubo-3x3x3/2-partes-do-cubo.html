@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link rel="icon" href="/favicon.ico">
+
+    <title>Cubo Mágico sem Decoreba | Cubo 3x3x3 - Partes do cubo</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
+
+    <script src="/js/AnimCube3.js"></script>
+
+</head>
+
+<body>
+    <div id="banner"></div>
+    <div id="menu"></div>
+    
+    <main class="container mb-0">
+        
+        <h1>Cubo 3x3x3</h1>
+        <h2>Entendendo e Resolvendo o Cubo de Rubik sem Decorar</h2>
+
+        <div class="row align-items-start">
+
+            <h3>2. Partes do cubo</h3>
+            <p>
+            O cubo de Rubik padrão é formado por 26 peças externas (visíveis) de 3 tipos diferentes, os centros (centers), os cantos (corners) e os lados (edges). Como mostram as Figuras 2.1, 2.2, 2.3 e 2.4.
+            </p>
+            <div class="col-md-3 text-center mb-3 px-3">
+                <div class="img-wrapper img-cubo">
+                    <script>
+                        var movimento="{Figura 2.1: Cubo montado}x2 z'";
+                        AnimCube3("initmove=x2 &move="+movimento+
+                                    "&movetext=0\
+                                    &fonttype=0\
+                                    &buttonheight=20\
+                                    &bgcolor=f0f0f0\
+                                    &butbgcolor=009999\
+                                    &snap=0\
+                                    &repeat=0\
+                                    &edit=1\
+                                    &speed=0\
+                                    &gabbacolors=1");
+                    </script>
+                </div>
+            </div>
+
+            <div class="col-md-3 text-center mb-3 px-3">
+                <div class="img-wrapper img-cubo">
+                    <script>
+                        var movimento="{Figura 2.2: Centros}x2 z'";
+                        AnimCube3("initmove=x2 &move="+movimento+
+                                    "&movetext=0\
+                                    &fonttype=0\
+                                    &textsize=12\
+                                    &facelets=llllwllllLLLLYLLLLllllollllLLLLRLLLLllllgllllLLLLBLLLL\
+                                    &buttonheight=20\
+                                    &bgcolor=f0f0f0\
+                                    &butbgcolor=009999\
+                                    &snap=0\
+                                    &repeat=0\
+                                    &edit=1\
+                                    &speed=0\
+                                    &gabbacolors=1")
+                    </script>
+                </div>
+            </div>
+
+            <div class="col-md-3 text-center mb-3 px-3">    
+                <div class="img-wrapper img-cubo">
+                    <script>
+                        var movimento="{Figura 2.3: Cantos}x2 z'";
+                        AnimCube3("initmove=x2 &move="+movimento+
+                                    "&movetext=0\
+                                    &fonttype=0\
+                                    &textsize=12\
+                                    &facelets=wlwlllwlwYLYLLLYLYolollloloRLRLLLRLRglglllglgBLBLLLBLB\
+                                    &buttonheight=20\
+                                    &bgcolor=f0f0f0\
+                                    &butbgcolor=009999\
+                                    &snap=0\
+                                    &repeat=0\
+                                    &edit=1\
+                                    &speed=0\
+                                    &gabbacolors=1")
+                    </script>
+                </div>
+            </div> 
+                
+            <div class="col-md-3 text-center mb-3 px-3">
+                <div class="img-wrapper img-cubo">
+                    <script>
+                        var movimento="{Figura 2.4: Lados}x2 z'";
+                        AnimCube3("initmove=x2 &move="+movimento+
+                                    "&movetext=0\
+                                    &fonttype=0\
+                                    &textsize=12\
+                                    &facelets=lwlwlwlwlLYLYLYLYLlololololLRLRLRLRLlglglglglLBLBLBLBL\
+                                    &buttonheight=20\
+                                    &bgcolor=f0f0f0\
+                                    &butbgcolor=009999\
+                                    &snap=0\
+                                    &repeat=0\
+                                    &edit=1\
+                                    &speed=0\
+                                    &gabbacolors=1")
+                    </script>
+                </div>
+            </div>
+
+            <p>
+            Os Centros possuem somente uma face visível e, portanto, só têm uma cor.
+            </p>
+            <p>
+            Os Lados possuem 2 faces visíveis com 2 cores diferentes.
+            </p>
+            <p>
+            Os Cantos possuem 3 faces visíveis com 3 cores diferentes.
+            </p>
+            <div class="col-md-12">
+                <p class="bg-warning py-2 px-2">
+                <b><u>Conhecimento Importante:</u> Os centros são sempre centros, assim como os lados são sempre lados e os cantos são sempre cantos.</b>
+                </p>
+            </div>
+            <p>
+            Isso significa que os lados só podem trocar de lugar com lados e os cantos só podem trocar de lugar com cantos. Você pode verificar isso interagindo com os cubos das Figuras 2.1, 2.2, 2.3 e 2.4. Arrastando com o botão esquerdo do mouse (ou seu dedo) é possível girar os cubos (clique no fundo da imagem) ou então suas camadas (clique sobre as peças). Os botões das barras de navegação também podem ser usados para animar as imagens. Os centros são exceção, eles nunca trocam de lugar entre si porque estão ligados por uma peça no interior do cubo que só permite que eles girem. Por mais que você gire as partes do cubo os centros sempre permanecem na mesma posição relativa. Experimente girando as camadas do cubo na Figura 2.2.
+            </p>
+            <p>
+            Assim, num "cubo padrão", o centro amarelo é sempre oposto ao branco, o centro vermelho sempre oposto ao laranja e o centro azul sempre oposto ao verde.
+            </p>
+            <div class="col-md-12">
+                <p class="bg-warning py-2 px-2">
+                <b><u>Conhecimento Importante:</u> Os centros sempre mantêm as posições relativas ente si.</b>
+                </p>
+            </div>
+                       
+        </div>
+
+        <nav class="nav nav-justified my-0">
+            <a class="nav-link virapagina" href="/cubo-3x3x3/1-introducao.html">⇦</a>
+            <a class="nav-link virapagina" href="/cubo-3x3x3/3-movimentos-no-cubo.html">⇨</a>
+        </nav>
+        
+    </main>
+        
+    <div id="footer"></div>
+    
+    <script src="/js/load-components.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+</body>
+
+</html>
