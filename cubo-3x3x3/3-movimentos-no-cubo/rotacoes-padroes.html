@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link rel="icon" href="/favicon.ico">
+
+    <title>Cubo Mágico sem Decoreba | Cubo 3x3x3 - Rotações padrões</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
+
+    <script src="/js/AnimCube3.js"></script>
+
+</head>
+
+<body>
+    <div id="banner"></div>
+    <div id="menu"></div>
+    
+    <main class="container mb-0">
+        
+        <h1>Cubo 3x3x3</h1>
+        <h2>Entendendo e Resolvendo o Cubo de Rubik sem Decorar</h2>
+
+        <div class="row align-items-start">
+
+            <p>
+            As rotações das camadas é que fazem as partes do cubo movimentarem-se.
+            </p>
+            <p>
+            A rotação padrão de uma camada externa sempre corresponde a 90°  e segue a regra da mão direita. Para entender a regra da mão direita feche seu punho direito com o polegar apontando para fora, como na Figura 3.10.
+            </p>
+
+            <div class="row align-items-start">
+                <div class="col-md-3">
+                    <p class="my-0 pt-0 pb-0" style="font-size:14px;">
+                    <b>Figura 3.10</b>
+                    </p>
+                    <img src="/img/Right_hand_rule_simple.png" class="img-fluid">
+                </div>
+                <div class="col-md-9">
+                    <p>
+                    Pela regra da mão direita o sentido de rotação ao redor do eixo formado pelo polegar é dado pelos 4 dedos dobrados.
+                    </p>
+                    <p>
+                    Para saber a rotação padrão de qualquer camada externa basta seguir a regra da mão direita apontando o polegar para a face do cubo que pertence a essa camada e fazer um giro de 90°. Nas Figuras 3.11, 3.12, 3.13 e 3.14 são apresentadas algumas rotações padrões, basta clicar em play (▷)para observar.
+                    </p>
+                </div>
+            </div>
+
+            <div class="row align-items-start">                           
+                <div class="col-md-2 text-center my-3 px-3">
+                    <p class="text">
+                    Exemplos:
+                    </p>
+                </div>
+
+                <div class="col-md-4 text-center mt-3 mb-3 px-3">
+                    <div class="img-wrapper img-cubo">
+                        <script>
+                            var movimento="{Figura 3.11: Rotação padrão da camada R}R";
+                            AnimCube3("initmove=x2 &move="+movimento+
+                                        "&movetext=5\
+                                        &yz=1\
+                                        &fonttype=0\
+                                        &textsize=12\
+                                        &buttonheight=20\
+                                        &bgcolor=f0f0f0\
+                                        &butbgcolor=009999\
+                                        &snap=0\
+                                        &repeat=0\
+                                        &edit=0\
+                                        &speed=0\
+                                        &gabbacolors=1")
+                        </script>
+                    </div>
+                </div>
+            
+                <div class="col-md-4 text-center my-3 px-3">    
+                    <div class="img-wrapper img-cubo">
+                        <script>
+                            var movimento="{Figura 3.12: Rotação padrão da camada L}L";
+                            AnimCube3("initmove=x2 &move="+movimento+
+                                        "&movetext=5\
+                                        &yz=1\
+                                        &fonttype=0\
+                                        &textsize=12\
+                                        &buttonheight=20\
+                                        &bgcolor=f0f0f0\
+                                        &butbgcolor=009999\
+                                        &snap=0\
+                                        &repeat=0\
+                                        &edit=0\
+                                        &speed=0\
+                                        &gabbacolors=1")
+                        </script>
+                    </div>
+                </div>
+
+            </div>
+            
+            <div class="row justify-content-center">                           
+  
+                <div class="col-md-4 text-center mt-3 mb-3 px-3">
+                    <div class="img-wrapper img-cubo">
+                        <script>
+                            var movimento="{Figura 3.13: Rotação padrão da camada U}U";
+                            AnimCube3("initmove=x2 &move="+movimento+
+                                        "&movetext=5\
+                                        &yz=1\
+                                        &fonttype=0\
+                                        &textsize=12\
+                                        &buttonheight=20\
+                                        &bgcolor=f0f0f0\
+                                        &butbgcolor=009999\
+                                        &snap=0\
+                                        &repeat=0\
+                                        &edit=0\
+                                        &speed=0\
+                                        &gabbacolors=1")
+                        </script>
+                    </div>
+                </div>
+            
+                <div class="col-md-4 text-center my-3 px-3">    
+                    <div class="img-wrapper img-cubo">
+                        <script>
+                            var movimento="{Figura 3.14: Rotação padrão da camada D}D";
+                            AnimCube3("initmove=x2 &move="+movimento+
+                                        "&movetext=5\
+                                        &yz=1\
+                                        &fonttype=0\
+                                        &textsize=12\
+                                        &buttonheight=20\
+                                        &bgcolor=f0f0f0\
+                                        &butbgcolor=009999\
+                                        &snap=0\
+                                        &repeat=0\
+                                        &edit=0\
+                                        &speed=0\
+                                        &gabbacolors=1")
+                        </script>
+                    </div>
+                </div>
+            </div> 
+                
+            <p>
+            A princípio pode parecer confuso, mas, segurando o cubo com a mão esquerda a rotação padrão de qualquer camada externa equivale ao movimento de fechar uma torneira com a mão direta com um giro de 90°, o que facilita a anotação e reprodução dos movimentos.
+            </p>
+            <p>
+            Segundo a notação da WCA (World Cube Association, <a href="http://www.worldcubeassociation.org/">http://www.worldcubeassociation.org</a>) a rotação padrão de qualquer camada externa é simplesmente representada por sua letra. Assim, a rotação padrão da camada R é simplesmente representada por R.
+            </p>
+            <p>
+            Quando se quer indicar a rotação de 90° no sentido contrário, ou seja, contrário à regra da mão direita, ou no sentido de abrir uma torneira com a mão direita, coloca-se um apóstrofo ( ' ) após a letra que indica a camada. Assim, R' indica a rotação de 90ᐤ da camada R no sentido contrário à regra da mão direita.
+            </p>
+            <p>
+            Para indicar rotações de 180° coloca-se o número 2 após a letra que representa a camada, por exemplo, U2 significa rotação de 180° da camada U. Nesse caso o sentido de rotação não importa porque o resultado final é sempre o mesmo.
+            </p>
+            <div class="col-md-12">
+                <p class="bg-warning py-2 px-2">
+                <b><u>Conhecimento Importante:</u> A rotação de 180° de uma camada sempre produz o mesmo resultado não importando o sentido de rotação.</b>
+                </p>
+            </div>
+               
+        </div>
+
+        <nav class="nav nav-justified my-0">
+            <a class="nav-link virapagina" href="/cubo-3x3x3/3-movimentos-no-cubo/eixos-de-rotacao.html">⇦</a>
+            <a class="nav-link virapagina" href="/cubo-3x3x3/3-movimentos-no-cubo/rotacoes-internas.html">⇨</a>
+        </nav>
+        
+    </main>
+        
+    <div id="footer"></div>
+    
+    <script src="/js/load-components.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+</body>
+
+</html>

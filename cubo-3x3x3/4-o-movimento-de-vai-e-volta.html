@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link rel="icon" href="/favicon.ico">
+
+    <title>Cubo Mágico sem Decoreba | Cubo 3x3x3 - O movimento de "vai e volta"</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
+
+    <script src="/js/AnimCube3.js"></script>
+
+</head>
+
+<body>
+    <div id="banner"></div>
+    <div id="menu"></div>
+    
+    <main class="container mb-0">
+        
+        <h1>Cubo 3x3x3</h1>
+        <h2>Entendendo e Resolvendo o Cubo de Rubik sem Decorar</h2>
+
+        <div class="row align-items-start">
+
+            <h3>4. O Movimento de “Vai e Volta”</h3>
+            <p>
+            Qualquer movimento do tipo U U' retorna a camada à sua posição original. Assim, por exemplo, R R' ou B' B, etc., sempre preservam a condição inicial.
+            </p>
+            <p>
+            Isso parece um movimento óbvio, é claro que, se você gira uma camada em 90ᐤ num sentido e depois faz esse movimento contrário, essa camada volta à sua posição original! Mas é justamente esse princípio básico que é usado quando se deseja que somente partes específicas de uma camada sejam afetadas.
+            </p>
+            <p>
+            Pode-se girar somente parte de uma camada, usando a rotação de uma camada perpendicular, e assim alterar somente a parte desejada. Depois voltar à posição inicial, mantendo-se todo o resto da camada original intacto.
+            </p>
+            <p>
+            A Figura 4.1 ilustra essa idéia. Para ver passo a passo, clique em avançar (⧐) a cada movimento; ou clique em play (▷) para ver a seqüência com pequenas pausas.
+            </p>
+            
+            <div class="row justify-content-center">
+                <div class="col-md-4 my-3 px-3">
+                    <p>
+                    O movimento R' (“Vai”) coloca o canto verde na camada inferior. A rotação da camada inferior (D') não afeta a superior, mas tira o canto verde de sua posição original. Agora fazendo o movimento de “Volta” (R) a camada superior retorna ao normal com exceção do canto verde.
+                    </p>
+                </div>
+
+                <div class="col-md-4 text-center mt-3 mb-3 px-3">
+                    <div class="img-wrapper img-cubo">
+                        <script>
+                            var movimento="{Figura 4.1}{Figura 4.1:         R' (vai)}R'.{Figura 4.1:     D' não afeta a camada U}D'.{Figura 4.1:         R (volta)}R";
+                            AnimCube3("initmove=x2 &move="+movimento+
+                                        "&movetext=5\
+                                        &yz=1\
+                                        &fonttype=0\
+                                        &textsize=12\
+                                        &facelets=lllllllllYYYYYYYYnllollolloLLnLLRLLRllllllgggLLBLLBLLn\
+                                        &buttonheight=20\
+                                        &bgcolor=f0f0f0\
+                                        &butbgcolor=009999\
+                                        &snap=0\
+                                        &repeat=0\
+                                        &edit=0\
+                                        &speed=0\
+                                        &gabbacolors=1")
+                        </script>
+                    </div>
+                </div>
+            </div>
+            
+            <p>
+            Esse princípio básico pode ser extrapolado até para movimentos mais complexos. Se você aplica uma seqüência de movimentos e depois faz exatamente o contrário tudo volta à condição original, menos aquilo que você alterou intencionalmente.
+            </p>
+            <div class="col-md-12">
+                <p class="bg-warning py-2 px-2">
+                <b>
+                <u>Conhecimento Importante:</u>
+                Para que somente parte de uma camada seja afetada usa-se o movimento de “vai e volta” de uma camada perpendicular. 
+                </b>
+                </p>
+            </div>
+
+        </div>
+
+        <nav class="nav nav-justified my-0">
+            <a class="nav-link virapagina" href="/cubo-3x3x3/3-movimentos-no-cubo/rotacoes-paralelas.html">⇦</a>
+            <a class="nav-link virapagina" href="/cubo-3x3x3/5-o-movimento-de-vai-troca-e-volta.html#">⇨</a>
+        </nav>
+        
+    </main>
+        
+    <div id="footer"></div>
+    
+    <script src="/js/load-components.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+</body>
+
+</html>

@@ -7,13 +7,13 @@
     
     <link rel="icon" href="/favicon.ico">
 
-    <title>Cubo Mágico sem Decoreba | Cubo 3x3x3 - Movimentos no cubo</title>
+    <title>Cubo Mágico sem Decoreba | Cubo 3x3x3 - Rotações internas</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet">
     <link href="/css/style.css" rel="stylesheet">
 
-    <script src="/js/AnimCube3.js"></script>
+    <script src="/js/AnimCube3wca.js"></script>
 
 </head>
 
@@ -28,35 +28,22 @@
 
         <div class="row align-items-start">
 
-            <h3>3. Movimentos no cubo</h3>
             <p>
-            Qualquer movimento no cubo sempre envolve a movimentação de várias peças em conjunto, sempre um conjunto de 9 ou 8 peças. Os movimentos sempre são de rotação ao redor de um eixo.
+            Para as rotações das camadas internas (M, E e S) a WCA fazia uso dessas mesmas letras mas hoje só faz uso da notação para girar 2 camadas simultaneamente. A letra w é sempre adicionada à frente da letra da camada externa desejada, indicando que essa camada e a interna são rotacionadas simultaneamente. Por exemplo, Rw indica que a camada R juntamente com a M são rotacionadas no sentido de R.
             </p>
             <p>
-            Olhando o cubo de frente para uma das faces você pode imaginar 3 eixos de rotação, o eixo x entrando na face à direita e saindo na esquerda, o eixo y entrando na face de cima e saindo embaixo e o eixo z entrando na face da frente e saindo na de trás.
+            Isso significa que para indicar a rotação de somente uma camada interna, por exemplo, M, é preciso fazer uso de duas notações, uma indicando a rotação de duas camadas e outra indicando a rotação da camada externa para a posição original. Suponha que você queira indicar a rotação somente da camada M no sentido de R, então é preciso escrever: Rw R'. Ou seja, ambas as camadas (R e M) são giradas no sentido de R e depois somente a camada R retorna à posição original. Portanto há notações equivalentes, por exemplo, são equivalentes: M' ou Rw R' ou Lw' L, como exemplificado nas Figuras 3.15, 3.16 e 3.17. Novamente, basta clicar em play (▷) para conferir.
             </p>
-            <p>
-            O cubo pode ser “fatiado” em camadas ao longo desses eixos.
-            </p>
-            <p>
-            Fatiando ao longo do eixo x têm-se três camadas. Uma à direita, chamada de camada R (Right), uma à esquerda, chamada de camada L (Left) e uma no meio, chamada de camada M (Middle), como mostram as Figuras 3.1, 3.2 e 3.3. Você pode ver a rotação do cubo no eixo x clicando em play (▷).
-            </p>
-                
-            <div class="col-md-3 text-center my-3 px-3">
-                <p>
-                Eixo de rotação: x
-                </p>
-            </div>
-
-            <div class="col-md-3 text-center mt-3 mb-3 px-3">
+        
+            <div class="col-md-4 text-center px-3">
                 <div class="img-wrapper img-cubo">
                     <script>
-                        var movimento="{Figura 3.1: Camada R (Right)}x";
+                        var movimento="{Figura 3.15}M'";
                         AnimCube3("initmove=x2 &move="+movimento+
                                     "&movetext=5\
+                                    &yz=1\
                                     &fonttype=0\
                                     &textsize=12\
-                                    &facelets=llwllwllwLLLLLLYYYlllllloooRRRLLLLLLlllllllllBBBBBBBBB\
                                     &buttonheight=20\
                                     &bgcolor=f0f0f0\
                                     &butbgcolor=009999\
@@ -68,37 +55,15 @@
                     </script>
                 </div>
             </div>
-
-            <div class="col-md-3 text-center my-3 px-3">    
+            <div class="col-md-4 text-center mb-3 px-3">
                 <div class="img-wrapper img-cubo">
                     <script>
-                        var movimento="{Figura 3.2: Camada M (Middle)}x";
+                        var movimento="{Figura 3.16}Rw R'";
                         AnimCube3("initmove=x2 &move="+movimento+
-                                    "&movetext=5\
+                                    "&movetext=1\
+                                    &yz=1\
                                     &fonttype=0\
                                     &textsize=12\
-                                    &facelets=lwllwllwlLLLYYYLLLlllooolllLLLRRRLLLlllllllllLLLLLLLLL\
-                                    &buttonheight=20\
-                                    &bgcolor=f0f0f0\
-                                    &butbgcolor=009999\
-                                    &snap=0\
-                                    &repeat=0\
-                                    &edit=0\
-                                    &speed=0\
-                                    &gabbacolors=1")
-                    </script>
-                </div>
-            </div> 
-                
-            <div class="col-md-3 text-center my-3 px-3">
-                <div class="img-wrapper img-cubo">
-                    <script>
-                        var movimento="{Figura 3.3: Camada L (Left)}x";
-                        AnimCube3("initmove=x2 &move="+movimento+
-                                    "&movetext=5\
-                                    &fonttype=0\
-                                    &textsize=12\
-                                    &facelets=wllwllwllYYYLLLLLLooollllllLLLLLLRRRgggggggggLLLLLLLLL\
                                     &buttonheight=20\
                                     &bgcolor=f0f0f0\
                                     &butbgcolor=009999\
@@ -110,12 +75,34 @@
                     </script>
                 </div>
             </div>
-             
+            <div class="col-md-4 text-center px-3">    
+                <div class="img-wrapper img-cubo">
+                    <script>
+                        var movimento="{Figura 3.17}Lw' L";
+                        AnimCube3("initmove=x2 &move="+movimento+
+                                    "&movetext=1\
+                                    &yz=1\
+                                    &fonttype=0\
+                                    &textsize=12\
+                                    &buttonheight=20\
+                                    &bgcolor=f0f0f0\
+                                    &butbgcolor=009999\
+                                    &snap=0\
+                                    &repeat=0\
+                                    &edit=0\
+                                    &speed=0\
+                                    &gabbacolors=1")
+                    </script>
+                </div>
+            </div>       
+            <p class="mt-3">
+            Obs.: nas notações antigas, M segue o sentido de L, S segue o sentido de F e E segue o sentido de U.
+            </p>  
         </div>
 
         <nav class="nav nav-justified my-0">
-            <a class="nav-link virapagina" href="/cubo-3x3x3/2-partes-do-cubo.html">⇦</a>
-            <a class="nav-link virapagina" href="/cubo-3x3x3/3-movimentos-no-cubo/eixos-de-rotacao.html">⇨</a>
+            <a class="nav-link virapagina" href="/cubo-3x3x3/3-movimentos-no-cubo/rotacoes-padroes.html">⇦</a>
+            <a class="nav-link virapagina" href="/cubo-3x3x3/3-movimentos-no-cubo/rotacoes-paralelas.html">⇨</a>
         </nav>
         
     </main>
