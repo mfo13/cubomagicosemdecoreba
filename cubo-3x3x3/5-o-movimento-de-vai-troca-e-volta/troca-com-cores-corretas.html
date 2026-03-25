@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link rel="icon" href="/favicon.ico">
+
+    <title>Cubo Mágico sem Decoreba | Cubo 3x3x3 - Troca com cores corretas</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
+
+    <script src="/js/AnimCube3.js"></script>
+
+</head>
+
+<body>
+    <div id="banner"></div>
+    <div id="menu"></div>
+    
+    <main class="container mb-0">
+        
+        <h1>Cubo 3x3x3</h1>
+        <h2>Entendendo e Resolvendo o Cubo de Rubik sem Decorar</h2>
+
+        <div class="row align-items-start">
+
+            <p>
+            É possível não só fazer a troca, mas também colocar a peça desejada com suas cores na orientação correta. Observe na Figura 5.7. Agora temos exatamente o canto com as cores certas para entrar no lugar da peça verde.
+            </p>
+            <p>
+            Como antes, precisamos colocar o canto que está na camada D no lugar do canto verde. Note que, outra vez, precisaremos fazer um reposicionamento. A dúvida é: qual a melhor opção de reposicionamento? D ou D' ? 
+            </p>
+            <p>
+            Vamos testar os dois casos para ver o que acontece.
+            </p>
+                     
+            <div class="row justify-content-center">
+                <div class="col-md-5 mt-3 mb-3 px-3">
+                    <p>
+                    Primeiro vamos fazer o reposicionamento usando o movimento D. Clique em avançar (⧐) na Figura 5.7.
+                    </p>
+                    <p>
+                    Perceba que a única opção que temos agora para o “vai, troca e volta” é usar a camada F para o movimento de “vai e volta”: 
+                    </p>
+                    <p>
+                    F ("vai")
+                    </p>
+                    <p>
+                    D' ("troca")
+                    </p>
+                    <p>
+                    F' ("volta")
+                    </p>
+                    <p>
+                    Clique em <i>play</i> (▷) na Figura 5.7 e veja.
+                    </p>
+                    <p>
+                    Note que o canto desejado foi para o lugar correto, mas numa orientação errada, as cores não estão nas faces corretas. Isso significa que a opção de usar D para o reposicionamento não foi boa.
+                    </p>
+                </div>
+                <div class="col-md-4 text-center mt-3 mb-3 px-3">
+                    <div class="img-wrapper img-cubo">
+                        <script>
+                            var movimento="{Figura 5.7}{Figura 5.7:   D (reposiciona)}D.{Figura 5.7:   F (vai)}F {Figura 5.7:   D' (troca)}D' {Figura 5.7:   F' (volta)}F'";
+                                setup="x2 R' D' R D"
+                            AnimCube3("initmove="+setup+"&move="+movimento+
+                                        "&movetext=5\
+                                        &yz=1\
+                                        &fonttype=0\
+                                        &textsize=12\
+                                        &facelets=llllllllnYYYYYYYYYllollolloNLRLLRLLRllllllgggLLBLLBnLB\
+                                        &buttonheight=20\
+                                        &bgcolor=f0f0f0\
+                                        &butbgcolor=009999\
+                                        &snap=0\
+                                        &repeat=0\
+                                        &edit=0\
+                                        &speed=0\
+                                        &gabbacolors=1")
+                        </script>
+                    </div>
+                </div>
+                                
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col-md-5 my-3 px-3">
+                    <p>
+                    Vamos então voltar ao início e tentar o reposicionamento D'. Clique em avançar (⧐) na Figura 5.8.
+                    </p>
+                    <p>
+                    Novamente, perceba que resta agora apenas uma opção para o movimento de “vai e volta”, usar a camada R:   
+                    </p>
+                    <p>
+                    R' ("vai")
+                    </p>
+                    <p>
+                    D ("troca")
+                    </p>
+                    <p>
+                    R' ("volta")
+                    </p>
+                    <p>
+                    Clique em <i>play</i> (▷) na Figura 5.8 e veja.
+                    </p>
+                </div>
+
+                <div class="col-md-4 text-center mt-3 mb-3 px-3">
+                    <div class="img-wrapper img-cubo">
+                        <script>
+                            var movimento="{Figura 5.8}{Figura 5.8:   D' (reposiciona)}D'.{Figura 5.8:   R' (vai)}R' {Figura 5.8:   D (troca)}D {Figura 5.8:   R (volta)}R";
+                                setup="x2 R' D' R D"
+                            AnimCube3("initmove="+setup+"&move="+movimento+
+                                        "&movetext=5\
+                                        &yz=1\
+                                        &fonttype=0\
+                                        &textsize=12\
+                                        &facelets=llllllllnYYYYYYYYYllollolloNLRLLRLLRllllllgggLLBLLBNLB\
+                                        &buttonheight=20\
+                                        &bgcolor=f0f0f0\
+                                        &butbgcolor=009999\
+                                        &snap=0\
+                                        &repeat=0\
+                                        &edit=0\
+                                        &speed=0\
+                                        &gabbacolors=1")
+                        </script>
+                    </div>
+                </div>
+            </div>
+
+            <p class="mt-3">
+            Voltando à condição inicial, antes do reposicionamento, notamos que havia duas opções para a camada do “vai e volta”, camada F ou R. Se quisermos usar a camada F então tiramos a peça desejada dessa camada durante o reposicionamento. Por outro lado, se quisermos usar a camada R então tiramos a peça desejada dessa camada durante o reposicionamento:
+            </p>
+
+            <div class="row justify-content-center">
+                <div class="col-md-4 my-3 px-3">
+                    <p>
+                    Camada F (com o centro rosa) como opção para o movimento de “vai e volta”. Clique em <i>play</i> (▷) na Figura 5.9 e veja.
+                    </p>
+                                                    
+                    <div class="img-wrapper img-cubo">
+                        <script>
+                            var movimento="{Figura 5.9}{Figura 5.9:   D (reposiciona)}D";
+                                setup="x2 R' D' R D"
+                            AnimCube3("initmove="+setup+"&move="+movimento+
+                                        "&movetext=5\
+                                        &yz=1\
+                                        &fonttype=0\
+                                        &textsize=12\
+                                        &facelets=lllllllllYYYYYYYYYllollolloLLRLmRLLRllllllgggLLBLLBLLB\
+                                        &buttonheight=20\
+                                        &bgcolor=f0f0f0\
+                                        &butbgcolor=009999\
+                                        &snap=0\
+                                        &repeat=0\
+                                        &edit=0\
+                                        &speed=0\
+                                        &gabbacolors=1")
+                        </script>
+                    </div>
+                </div>
+
+                <div class="col-md-1"></div>
+
+                <div class="col-md-4 my-3 px-3">
+                    <p>
+                    Camada R (com o centro rosa) como opção para o movimento de “vai e volta”. Clique em <i>play</i> (▷) na Figura 5.10 e veja.
+                    </p>
+                                                    
+                    <div class="img-wrapper img-cubo">
+                        <script>
+                            var movimento="{Figura 5.10}{Figura 5.10:   D' (reposiciona)}D'";
+                                setup="x2 R' D' R D"
+                            AnimCube3("initmove="+setup+"&move="+movimento+
+                                        "&movetext=5\
+                                        &yz=1\
+                                        &fonttype=0\
+                                        &textsize=12\
+                                        &facelets=lllllllllYYYYYYYYYllollolloLLRLLRLLRllllllgggLLBLmBLLB\
+                                        &buttonheight=20\
+                                        &bgcolor=f0f0f0\
+                                        &butbgcolor=009999\
+                                        &snap=0\
+                                        &repeat=0\
+                                        &edit=0\
+                                        &speed=0\
+                                        &gabbacolors=1")
+                        </script>
+                    </div>
+                </div>
+            </div>
+            
+            <p class="mt-3">
+            Perceba que, com a peça desejada bem embaixo do lugar onde queremos levá-la podemos decidir qual reposicionamento é o melhor.
+            </p>
+            <p>
+            O “vai e volta” com a camada F irá deixar a face amarela para cima enquanto que o “vai e volta” com a camada R irá deixar a face azul para cima. Nesse caso a melhor opção então é usar a camada R para o “vai e volta”. Portanto o melhor reposicionamento inicial é D'. Basta observar o que o movimento de “volta” irá produzir.
+            </p>
+
+            <div class="col-md-12">
+                <p class="bg-warning py-2 px-2 mb-0">
+                <b>
+                <u>Dica para usar antes do “vai, troca e volta”:</u>
+                </b>
+                </p>
+                <ul class="bg-warning mt-0">
+                    <li>coloque a peça desejada bem embaixo do local para onde ela deve ir</li>
+                    <li>isso obrigará você a tomar uma decisão sobre o melhor reposicionamento</li>
+                    <li>conseqüentemente o resultado final será uma peça no lugar e na orientação correta</li>
+                </ul>
+
+                <div class="bg-info py-2 px-2 mb-0">
+                    <p>
+                    Agora é sua vez de treinar, faça movimentos de “vai, troca e volta” observando como as cores da peça trocada mudam de orientação depois do movimento.
+                    </p>
+                    <p>
+                    Com um pouco de observação e prática você será capaz não só de efetuar a troca, mas ao mesmo tempo colocar a peça trocada com suas cores na orientação correta.
+                    </p>
+                    <p>
+                    Para terminar seu treinamento embaralhe o cubo e tente montar uma única camada, sem se preocupar com o restante e apenas aplicando os princípios vistos até agora.
+                    </p>
+                    <p>
+                    Se preferir use o cubo virtual abaixo ou <a href="/cubos-virtuais/3x3x3.html">clique aqui</a>.
+                    </p>
+                </div>  
+            </div>
+        </div>
+
+        <div class="row justify-content-center my-3">
+            <div class="col-md-4">
+                <table width="100%" height="100%">
+                    <tr>
+                        <td colspan="2" width="100%" height="100%">
+                            <div id="treino" class="img-wrapper img-cubo"></div>
+                        </td>
+                    </tr>
+                    <tr class="text-center">
+                        <td>
+                            <button style="font-size: 15px;" onclick="newCube(1)">Embaralhar</button>
+                        </td>
+                        <td>
+                            <button style="font-size: 15px;" onclick="newCube(0)">Arrumar</button>
+                        </td>
+                    </tr>
+                </table>
+                <script>
+                    var params = 'id=treino&position=RRRRRRRRRRDD&buttonbar=0&bgcolor=f0f0f0&edit=1&snap=0&gabbacolors=1';
+                    var rand = '&initmove=random';
+                    AnimCube3(params);
+                    function newCube(cmd) {
+                        var src = params;
+                        if (cmd == 1)
+                            src += rand;
+                        AnimCube3(src);
+                    }
+                </script>
+            </div>
+        </div>
+        
+        <nav class="nav nav-justified my-0">
+            <a class="nav-link virapagina" href="/cubo-3x3x3/5-o-movimento-de-vai-troca-e-volta/exemplos-de-vai-troca-e-volta.html">⇦</a>
+            <a class="nav-link virapagina" href="/cubo-3x3x3/6-o-metodo-de-frey-e-singmaster.html">⇨</a>
+        </nav>
+        
+    </main>
+        
+    <div id="footer"></div>
+    
+    <script src="/js/load-components.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+</body>
+
+</html>
