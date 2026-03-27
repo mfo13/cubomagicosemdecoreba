@@ -193,6 +193,10 @@ async function initMenu(){
             if(e.target.tagName === "A" && anchor.href){
                 e.preventDefault();
 
+                // SALVAR SCROLL (faltava isso!)
+                const sidebar = document.getElementById("sidebar");
+                localStorage.setItem("menuScroll", sidebar.scrollTop);
+
                 setTimeout(()=>{
                     window.location.href = anchor.href;
                 }, 250);
@@ -200,17 +204,21 @@ async function initMenu(){
         };
     });
 
-    /* detectar página atual */
-    let currentPage = window.location.pathname.split("/").pop();
+    /* detectar página atual e manter o link do menu ativo*/
+    const currentUrl = window.location.pathname.split("/").pop() || "index.html";
     document.querySelectorAll(".menu a").forEach(link=>{
-        if(link.getAttribute("href") === currentPage){
-            link.classList.add("active");
-            /* abrir submenu automaticamente */
-            let parent = link.closest(".menu-item");
-            if(parent && parent.classList.contains("has-submenu")){
-                parent.classList.add("open");
+        const linkUrl = link.getAttribute("href").split("/").pop();
+            if(linkUrl === currentUrl){
+                link.classList.add("active");
+                // abrir submenu automaticamente
+                    let parent = link.closest(".menu-item");
+                    while(parent){
+                        if(parent.classList.contains("has-submenu")){
+                            parent.classList.add("open");
+                        }
+                        parent = parent.parentElement.closest(".menu-item");
+                    }
             }
-        }
     });
 
     /* restaurar estado do menu */
@@ -222,14 +230,33 @@ async function initMenu(){
         }
     });
 
-    /* garantir que o caminho ativo fique aberto */
-    document.querySelectorAll(".menu a.active").forEach(link=>{
-        let parent = link.closest(".has-submenu");
+    /* garantir que o caminho ativo fique aberto e os outros fechados*/
+    const activeLink = document.querySelector(".menu a.active");
+    if(activeLink){
+        // fecha TODOS os submenus primeiro
+        document.querySelectorAll(".has-submenu").forEach(item=>{
+            item.classList.remove("open");
+        });
+
+        // abre apenas o caminho do ativo
+        let parent = activeLink.closest(".has-submenu");
         while(parent){
             parent.classList.add("open");
             parent = parent.parentElement.closest(".has-submenu");
         }
-    });
+
+        // opcional: sincroniza com localStorage
+        let state = {};
+
+        document.querySelectorAll(".has-submenu.open").forEach(item=>{
+            const id = item.dataset.menu;
+            if(id){
+                state[id] = true;
+            }
+        });
+
+        localStorage.setItem("menuState", JSON.stringify(state));
+    }
 
     /* evitar problema de redimensionamento de tela */
     window.addEventListener("resize",()=>{
@@ -238,6 +265,18 @@ async function initMenu(){
             overlay.style.display="none";
         }
     });
+
+    /* restaurar a posição da scroll bar */
+    const savedScroll = localStorage.getItem("menuScroll");
+    if(savedScroll !== null){
+        requestAnimationFrame(()=>{
+            requestAnimationFrame(()=>{
+                sidebar.style.scrollBehavior = "auto";
+                sidebar.scrollTop = parseInt(savedScroll, 10);
+                localStorage.removeItem("menuScroll"); // limpa após usar
+            });
+        });
+    }
 }
 
 function createMenu(items, parentId=""){

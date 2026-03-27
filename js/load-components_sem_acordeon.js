@@ -173,6 +173,10 @@ async function initMenu(){
             if(e.target.tagName === "A" && anchor.href){
                 e.preventDefault();
 
+                // salva posição do scroll
+                const sidebar = document.getElementById("sidebar");
+                localStorage.setItem("menuScroll", sidebar.scrollTop);
+
                 setTimeout(()=>{
                     window.location.href = anchor.href;
                 }, 250);
@@ -180,15 +184,19 @@ async function initMenu(){
         };
     });
 
-    /* detectar página atual */
-    let currentPage = window.location.pathname.split("/").pop();
+    /* detectar página atual e manter link do menu ativo*/
+    const currentUrl = window.location.pathname.split("/").pop() || "index.html";
     document.querySelectorAll(".menu a").forEach(link=>{
-        if(link.getAttribute("href") === currentPage){
+        const linkUrl = link.getAttribute("href").split("/").pop();
+        if(linkUrl === currentUrl){
             link.classList.add("active");
-            /* abrir submenu automaticamente */
+            // abrir submenu automaticamente
             let parent = link.closest(".menu-item");
-            if(parent && parent.classList.contains("has-submenu")){
-                parent.classList.add("open");
+            while(parent){
+                if(parent.classList.contains("has-submenu")){
+                    parent.classList.add("open");
+                }
+                parent = parent.parentElement.closest(".menu-item");
             }
         }
     });
@@ -218,6 +226,18 @@ async function initMenu(){
             overlay.style.display="none";
         }
     });
+
+    /* restaurar a posição da scroll bar */
+    const savedScroll = localStorage.getItem("menuScroll");
+    if(savedScroll !== null){
+        requestAnimationFrame(()=>{
+            requestAnimationFrame(()=>{
+                sidebar.style.scrollBehavior = "auto";
+                sidebar.scrollTop = parseInt(savedScroll, 10);
+                localStorage.removeItem("menuScroll"); // limpa após usar
+            });
+        });
+    }
 }
 
 function createMenu(items, parentId=""){

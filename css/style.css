@@ -152,7 +152,8 @@ body{
 }
 
 /* item ativo */
-.menu a.active{
+.menu a.active,
+.menu a.hover {
     color:#c084fc;
     font-weight:bold;
 }
