@@ -205,20 +205,24 @@ async function initMenu(){
     });
 
     /* detectar página atual e manter o link do menu ativo*/
-    const currentUrl = window.location.pathname.split("/").pop() || "index.html";
+    const currentPath = window.location.pathname.replace(/\/$/, "");
     document.querySelectorAll(".menu a").forEach(link=>{
-        const linkUrl = link.getAttribute("href").split("/").pop();
-            if(linkUrl === currentUrl){
+        try{
+            const linkUrl = new URL(link.href, window.location.origin);
+            const linkPath = linkUrl.pathname.replace(/\/$/, "");
+
+            if(linkPath === currentPath){
                 link.classList.add("active");
-                // abrir submenu automaticamente
-                    let parent = link.closest(".menu-item");
-                    while(parent){
-                        if(parent.classList.contains("has-submenu")){
-                            parent.classList.add("open");
-                        }
-                        parent = parent.parentElement.closest(".menu-item");
+
+                let parent = link.closest(".menu-item");
+                while(parent){
+                    if(parent.classList.contains("has-submenu")){
+                        parent.classList.add("open");
                     }
+                    parent = parent.parentElement.closest(".menu-item");
+                }
             }
+        } catch(e){}
     });
 
     /* restaurar estado do menu */
