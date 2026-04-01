@@ -7,11 +7,14 @@
     
     <link rel="icon" href="/favicon.ico">
 
-    <title>Cubo Mágico sem Decoreba | Cubo 3x3x3 - Introdução</title>
+    <title>Cubo Mágico sem Decoreba | Cubos grandes - Erros de paridade</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet">
     <link href="/css/style.css" rel="stylesheet">
+
+    <script src="/js/AnimCube4.js"></script>
+
 </head>
 
 <body>
@@ -20,40 +23,138 @@
     
     <main class="container mb-0">
         
-        <h1>Cubo 3x3x3</h1>
-        <h2>Entendendo e Resolvendo o Cubo de Rubik sem Decorar</h2>
+        <h1>Cubo 4x4x4 e maiores</h1>
+        <h2>Entendendo a Origem dos Erros de Paridade e Resolvendo sem Decorar</h2>
 
         <div class="row align-items-start">
 
             <div class="container px-3">
                 <h3>1. Introdução</h3>
                 <p>
-                A idéia desse guia é ensinar a resolver o cubo de Rubik sem a necessidade de decorar algoritmos de movimentos.
+                Esse guia tem como objetivo principal mostrar as origens dos erros de paridade que ocorrem em cubos 4x4x4 ou maiores. Dessa maneira uma pessoa habituada a usar comutadores e conjugados poderá resolvê-los sem a necessidade de decorar qualquer algoritmo.
                 </p>
                 <p>
-                Esse não é um caminho curto quando é seguido pela primeira vez. Se você é iniciante, sem problemas, vá em frente! Mas se quer resolver imediatamente o seu cubo então é melhor procurar por tutoriais com algoritmos e sobre o método das camadas. Um ótimo tutorial sobre isso pode ser encontrado no site <a href="https://www.blog.oncube.com.br/" target="_blank" rel="noopener noreferrer">www.blog.oncube.com.br</a>. Por outro lado, se você não quer gastar espaço da memória RAM da sua cabeça com algoritmos então terá que gastar energia com sua CPU, sinto muito, mas não dá para ter tudo...
+                Embora sejam apresentadas aqui algumas soluções elas servem apenas como exemplos para que você encontre os seus próprios caminhos, não são as soluções mais curtas ou inteligentes. Isso significa que elas não servem para cubo velocidade. Contudo, é possível, a partir desse guia, entender como os algoritmos rápidos são construídos. Oportunamente serão indicados links que mostram a construção desses algoritmos consagrados, o que dará a você uma visão lógica dos mesmos, facilitando o processo de decorá-los caso esteja interessado em cubo velocidade.
+                </p>
+                <p class="bg-warning px-2 py-2">
+                <b>Importante:</b> Esse guia só é útil para quem já conhece bem o uso de comutadores e conjugados e saiba como resolver o 3x3x3 sem a necessidade de algoritmos. Veja antes o guia: <a href="/cubo-3x3x3/1-introducao.html">“Entendendo e Resolvendo o Cubo de Rubik sem Decorar”</a>
                 </p>
                 <p>
-                Este guia também não é apropriado para quem quer desenvolver velocidade, nesse caso métodos que utilizam algoritmos decorados são mais eficientes, você pode encontrar ótimos tutoriais e dicas no mesmo site já mencionado.
-                </p>
-                <p class="bg-warning py-2 px-2">
-                <b>Então para que serve esse guia?</b> Serve para aqueles que desejam conhecer a “lógica do cubo”, e a partir de puro raciocínio resolvê-lo, sem decorar seqüências de movimentos. Serve também para aqueles que preferem os algoritmos, mas querem decorar com mais facilidade. O entendimento da lógica dos movimentos ajuda nesse processo.
+                Esse guia também assume que você já conheça a estrutura dos cubos 4x4x4, ou maiores, e a nomenclatura de movimentos de acordo com o padrão adotado pela <a href="https://www.worldcubeassociation.org/" target="_blank" rel="noopener noreferrer">WCA</a> (World Cube Association) bem como a notação mais antiga, que adota o uso de modificadores, n, m e c, veja antes o guia <a href="/cubo-4x4x4-e-maiores/1-introducao.html">"Resolvendo Cubos Grandes Sem Decorar"</a>.
                 </p>
                 <p>
-                Para resolver o cubo sem decorar é preciso antes entender algumas “leis” que regem seus movimentos e como elas podem ser usadas. Esse é o objetivo principal desse guia. 
+                Mas, se você conhece muito bem comutadores e conjugados porque precisaria de um guia para ajudar a resolver o 4x4x4 ou cubos maiores? Bem, é perfeitamente possível encontrar seu próprio caminho para resolver qualquer cubo NxNxN. Contudo, acontecem situações, ou configurações, no final da solução, que aparentemente são impossíveis. Essas configurações são conhecidas como erros de paridade e acontecem devido a combinações de erros que, parcialmente “anulados”, dão a ilusão de uma configuração absurda. Veja a seguir os casos que serão tratados nesse guia:
                 </p>
-                <p>
-                Embora também seja apresentada uma estratégia de solução, ela serve apenas para exercitar o raciocínio e para tornar o guia mais interessante. Depois de entender algumas “leis” do cubo você será capaz de escolher a estratégia que mais lhe agradar.
+                <ul>
+                    <li>Caso 1 na Figura 1.1: Erro de paridade PLL (Permutation of Last Layer) com a "permutação de pares de edges".</li>
+                    <li>Caso 2 na Figura 1.2: Erro de paridade PLL (Permutation of Last Layer) com a "permutação de 2 cantos".</li>
+                    <li>Caso 3 na Figura 1.3: Erro de paridade PLL (Permutation of Last Layer) com a "permutação de 2 edges".</li>
+                    <li>Caso 4 na Figura 1.4: Erro de paridade OLL (Orientation of Last Layer) com a "desorientação de 2 edges".</li>
+                </ul>
+                <p class="bg-warning px-2 py-2">
+                <b>Importante:</b> Não se engane com as denominações, elas não se referem às origens dos erros, mas ao que eles aparentam.
                 </p>
-                <p>
-                Com bastante prática e experiência você poderá criar seus próprios algoritmos se quiser. Além disso, se você prefere algoritmos já consagrados, o entendimento da lógica de movimentos do cubo ajudará você a decorar com mais facilidade.
-                </p>
+
+                <div class="row justify-content-center">
+                    <div class="col-md-4 text-center mt-3 mb-3 px-3">
+                        <div class="img-wrapper img-cubo">
+                            <script>
+                                var movimento="{Figura 1.1: Caso 1}";
+                                AnimCube4("initmove=F2 Bm Fm D Fm' U2 Fm D' Fm' U2 Bm' Fm' y' Rm' D' Rm U2 Rm' D Rm U2 y Fm F2 &move="+movimento+
+                                            "&movetext=0\
+                                            &yz=1\
+                                            &fonttype=0\
+                                            &textsize=12\
+                                            &facelets=bbbbbbbbbbbbbbbbGGGGGGGGGGGGGGGGrrrrrrrrrrrrrrrrOOOOOOOOOOOOOOOOwwwwwwwwwwwwwwwwYYYYYYYYYYYYYYYY\
+                                            &buttonbar=2\
+                                            &buttonheight=20\
+                                            &bgcolor=f0f0f0\
+                                            &butbgcolor=009999\
+                                            &snap=0\
+                                            &repeat=0\
+                                            &edit=0\
+                                            &speed=20\
+                                            &gabbacolors=1")
+                            </script>
+                        </div>
+                    </div>
+                    <div class="col-md-4 text-center mt-3 mb-3 px-3">
+                        <div class="img-wrapper img-cubo">
+                            <script>
+                                var movimento="{Figura 1.2: Caso 2}";
+                                AnimCube4("initmove=L F' L' B L F L' B' y. F' L F L' F' L F R' F' L' F L F' L' F R Dt' Um. Fm Bm' Lm Rm' D' Lm' Rm U2 Lm Rm' D Lm' Rm U2 Fm' Bm y2. F2 Bm Fm D Fm' U2 Fm D' Fm' U2 Bm' Fm' y' Rm' D' Rm U2 Rm' D Rm U2 y Fm F2 &move="+movimento+
+                                            "&movetext=0\
+                                            &yz=1\
+                                            &fonttype=0\
+                                            &textsize=12\
+                                            &facelets=bbbbbbbbbbbbbbbbGGGGGGGGGGGGGGGGrrrrrrrrrrrrrrrrOOOOOOOOOOOOOOOOwwwwwwwwwwwwwwwwYYYYYYYYYYYYYYYY\
+                                            &buttonbar=2\
+                                            &buttonheight=20\
+                                            &bgcolor=f0f0f0\
+                                            &butbgcolor=009999\
+                                            &snap=0\
+                                            &repeat=0\
+                                            &edit=0\
+                                            &speed=20\
+                                            &gabbacolors=1")
+                            </script>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row justify-content-center">
+                    <div class="col-md-4 text-center mt-3 mb-3 px-3">
+                        <div class="img-wrapper img-cubo">
+                            <script>
+                                var movimento="{Figura 1.3: Caso 3}"
+                                AnimCube4("initmove=Rm2 B2 U2 Lm U2 Rm' U2 Rm U2 F2 Rm F2 Lm' B2 Rm2. Lm Rm2 D2 Rm' U2 Rm D2 Rm' U2 Rm' Lm' &move="+movimento+
+                                            "&movetext=0\
+                                            &yz=1\
+                                            &fonttype=0\
+                                            &textsize=12\
+                                            &facelets=bbbbbbbbbbbbbbbbGGGGGGGGGGGGGGGGrrrrrrrrrrrrrrrrOOOOOOOOOOOOOOOOwwwwwwwwwwwwwwwwYYYYYYYYYYYYYYYY\
+                                            &buttonbar=2\
+                                            &buttonheight=20\
+                                            &bgcolor=f0f0f0\
+                                            &butbgcolor=009999\
+                                            &snap=0\
+                                            &repeat=0\
+                                            &edit=0\
+                                            &speed=20\
+                                            &gabbacolors=1")
+                            </script>
+                        </div>
+                    </div>
+                    <div class="col-md-4 text-center mt-3 mb-3 px-3">
+                        <div class="img-wrapper img-cubo">
+                            <script>
+                                var movimento="{Figura 1.4: Caso 4}";
+                                AnimCube4("initmove=Rm2 B2 U2 Lm U2 Rm' U2 Rm U2 F2 Rm F2 Lm' B2 Rm2&move="+movimento+
+                                            "&movetext=0\
+                                            &yz=1\
+                                            &fonttype=0\
+                                            &textsize=12\
+                                            &facelets=bbbbbbbbbbbbbbbbGGGGGGGGGGGGGGGGrrrrrrrrrrrrrrrrOOOOOOOOOOOOOOOOwwwwwwwwwwwwwwwwYYYYYYYYYYYYYYYY\
+                                            &buttonbar=2\
+                                            &buttonheight=20\
+                                            &bgcolor=f0f0f0\
+                                            &butbgcolor=009999\
+                                            &snap=0\
+                                            &repeat=0\
+                                            &edit=0\
+                                            &speed=20\
+                                            &gabbacolors=1")
+                            </script>
+                        </div>
+                    </div>
+                </div>
+
             </div>           
         </div>
 
         <nav class="nav nav-justified my-0">
-            <a class="nav-link virapagina" href="/cubo-3x3x3.html">⇦</a>
-            <a class="nav-link virapagina" href="/cubo-3x3x3/2-partes-do-cubo.html">⇨</a>
+            <a class="nav-link virapagina" href="/cubo-4x4x4-e-maiores/5-referencias.html">⇦</a>
+            <a class="nav-link virapagina" href="/cubo-4x4x4-e-maiores/erros-de-paridade/#">⇨</a>
         </nav>
         
     </main>
