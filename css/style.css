@@ -310,13 +310,14 @@ h3 {
 /* links para mudar de página */
 .virapagina{
     font-size: 28px;
+    font-weight: bold;
     color:#9c22c2;
     text-decoration: none;
 }
 
 .virapagina:hover{
     color:#9c22c2;
-    font-weight: bold;
+    font-size: 30px;
 }
 
 /* links gerais */

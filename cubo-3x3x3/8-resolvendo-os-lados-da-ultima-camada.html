@@ -8,6 +8,7 @@
     <link rel="icon" href="/favicon.ico">
 
     <title>Cubo Mágico sem Decoreba | Cubo 3x3x3 - Os lados da última camada</title>
+    <meta name="description" content="Resolva os edges da última camada do cubo mágico com lógica e movimentos simples, usando o método de vai, troca e volta.">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet">
@@ -42,7 +43,7 @@
                 </ol>
                                
                 <div class="row justify-content-center">
-                    <div class="col-md-4 mt-3 mb-3 px-3">
+                    <div class="col-md-4 my-3 px-3">
                         <p>
                         Como nenhum <i>edge</i> da camada superior está no lugar podemos começar com qualquer um deles. Nesse caso temos um deles na coluna vertical usada para o “vai e volta”. A única opção que temos é fazer R, “trocar” e “voltar”.
                         </p>
@@ -56,7 +57,7 @@
                         Note que a troca foi feita com qualquer outro <i>edge</i> com a cor amarela, a dica é justamente trocar com um <i>edge</i> com a cor amarela, apenas um deles não tem a face amarela, se você trocar com ele terá que trocar novamente para poder deixar um edge amarelo na coluna de “vai e volta”.
                         </p>
                     </div>
-                    <div class="col-md-4 text-center mt-3 mb-3 px-3">
+                    <div class="col-md-4 text-center my-3 px-3">
                         <div class="img-wrapper img-cubo">
                             <script>
                                 var movimento="{Figura 8.1}{Figura 8.1:   (vai) R}R.{Figura 8.1:   (troca) U'}U'.{Figura 8.1:   (volta) R'}R'";
@@ -81,7 +82,7 @@
                 </div>
                 
                 <div class="row justify-content-center">
-                    <div class="col-md-4 mt-3 mb-3 px-3">
+                    <div class="col-md-4 my-3 px-3">
                         <p>
                         Agora é só girar a camada superior para que fique na posição correta e facilite a decidir a próxima troca. Neste caso, U2.
                         </p>
@@ -89,7 +90,7 @@
                         Clique em <i>play</i> (▷) na Figura 8.2 e veja.
                         </p>
                     </div>
-                    <div class="col-md-4 text-center mt-3 mb-3 px-3">
+                    <div class="col-md-4 text-center my-3 px-3">
                         <div class="img-wrapper img-cubo">
                             <script>
                                 var movimento="{Figura 8.2}U2";
@@ -114,7 +115,7 @@
                 </div>
                 
                 <div class="row justify-content-center">
-                    <div class="col-md-6 mt-3 mb-3 px-3">
+                    <div class="col-md-6 my-3 px-3">
                         <p>
                         Dessa maneira é possível decidir o posicionamento da camada superior para o próximo movimento de “vai, troca e volta”. No nosso exemplo, como o <i>edge</i> na coluna de “vai e volta” tem uma face laranja significa que ele é oposto ao <i>edge</i> que já foi resolvido (no cubo a face laranja é oposta à vermelha). Assim fazemos U2 antes do próximo “vai, troca e volta”.
                        </p>
@@ -134,7 +135,7 @@
                         Clique novamente em avançar (<span style="font-size: 25px;">⧐</span>) na Figura 8.3 e veja.
                        </p>
                     </div>
-                    <div class="col-md-4 text-center mt-3 mb-3 px-3">
+                    <div class="col-md-4 text-center my-3 px-3">
                         <div class="img-wrapper img-cubo">
                             <script>
                                 var movimento="{Figura 8.3}{Figura 8.3:   (reposiciona) U2}U2.{Figura 8.3:   (vai) F'}F'.{Figura 8.3:   (troca) U'}U'.{Figura 8.3:   (volta) F}F.{Figura 8.3:   (reposiciona) U'}U'";
@@ -174,7 +175,7 @@
                 </p>
 
                 <div class="row justify-content-center">
-                    <div class="col-md-4 mt-3 mb-3 px-3">
+                    <div class="col-md-4 my-3 px-3">
                         <p>
                         Para o caso b basta proceder como antes, reposicionar a camada superior e fazer o “vai, troca e volta”. A única opção de troca será o <i>edge</i> sem a face amarela porque os outros já foram resolvidos antes. Assim, neste caso, faremos:
                         </p>
@@ -197,7 +198,7 @@
                         Terminado o movimento de “vai, troca e volta” todos os <i>edges</i> amarelos estarão corretos, juntamente com o <i>edge</i> da coluna de “vai e volta”. Talvez seja necessário, apenas, girar a camada superior para a posição correta.
                         </p>
                     </div>
-                    <div class="col-md-4 text-center mt-3 mb-3 px-3">
+                    <div class="col-md-4 text-center my-3 px-3">
                         <div class="img-wrapper img-cubo">
                             <script>
                                 var movimento="{Figura 8.4: Caso b}{Figura 8.4: Caso b   (reposiciona) U'}U'.{Figura 8.4: Caso b   (vai) R}R.{Figura 8.4: Caso b   (troca) U}U.{Figura 8.4: Caso b   (volta) R'}R'";
@@ -222,7 +223,7 @@
                 </div>
 
                 <div class="row justify-content-center">
-                    <div class="col-md-6 mt-3 mb-3 px-3">
+                    <div class="col-md-6 my-3 px-3">
                         <p>
                         Para o caso c fica uma dúvida, assim que você fizer o movimento de “vai” todos os <i>edges</i> amarelos estarão corretos mas você é obrigado a fazer a troca e voltar, então o que fazer?
                         </p>
@@ -236,7 +237,7 @@
                         Clique em <i>play</i> (▷) na Figura 8.5 e veja.
                         </p>
                     </div>
-                    <div class="col-md-4 text-center mt-3 mb-3 px-3">
+                    <div class="col-md-4 text-center my-3 px-3">
                         <div class="img-wrapper img-cubo">
                             <script>
                                 var movimento="{Figura 8.5: Caso c}{Figura 8.5: Caso c  (vai-troca-volta) R U' R'}R U' R'.{Figura 8.5: Caso c  (reposiciona) U'}U'.{Figura 8.5: Caso c  (vai-troca-volta) R U' R'}R U' R'.{Figura 8.5: Caso c  (reposiciona) U'}U'.{Figura 8.5: Caso c  (vai-troca-volta) R U' R'}R U' R'";
