@@ -1,7 +1,7 @@
 // variável e função para carregar a estrutura do menu
 let menuData = [];
 async function loadMenuData(){
-    const response = await fetch("/components/menu.json");
+    const response = await fetch("components/menu.json");
     menuData = await response.json();
 }
 
@@ -14,9 +14,9 @@ async function loadComponent(id,file) {
 
 // função de inicialização
 async function init(){
-    await loadComponent("banner","/components/banner.html");
-    await loadComponent("menu","/components/menu.html");
-    await loadComponent("footer","/components/footer.html");
+    await loadComponent("banner","components/banner.html");
+    await loadComponent("menu","components/menu.html");
+    await loadComponent("footer","components/footer.html");
     await loadMenuData(); // carrega estrutura do menu aqui
     initMenu(); // chama só aqui
 }
