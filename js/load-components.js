@@ -43,10 +43,8 @@ async function initMenu(){
     overlay.onclick=closeMenu;
 
     function closeMenu(){
-        if(window.innerWidth < 768){
-            sidebar.classList.remove("open");
-            overlay.style.display="none";
-        }
+        sidebar.classList.remove("open");
+        overlay.style.display="none";
     }
 
     /* fechar menu ao clicar em link no celular */
