@@ -71,11 +71,16 @@
                 <script>
                     var params = 'id=cube&position=RRRRRRRRRRDD&buttonbar=0&bgcolor=f0f0f0&edit=1&snap=0&gabbacolors=1';
                     var rand = '&initmove=random';
+                    var acjs_removeListeners = [];
                     AnimCube6(params);
                     function newCube(cmd) {
                         var src = params;
                         if (cmd == 1)
                             src += rand;
+                        // Remove listeners antigos antes de recriar
+                        if (acjs_removeListeners['cube']) {
+                            acjs_removeListeners['cube']();
+                        }
                         AnimCube6(src);
                     }
                 </script>

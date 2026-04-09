@@ -77,7 +77,10 @@
                         var src = params;
                         if (cmd == 1)
                             src += rand;
-                        acjs_removeListeners['cube']();
+                        // Remove listeners antigos antes de recriar
+                        if (acjs_removeListeners['cube']) {
+                            acjs_removeListeners['cube']();
+                        }
                         AnimCube2(src);
                     }
                 </script>
