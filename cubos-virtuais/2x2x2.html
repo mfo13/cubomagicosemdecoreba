@@ -71,17 +71,12 @@
                 <script>
                     var params = 'id=cube&position=RRRRRRRRRRDD&buttonbar=0&bgcolor=f0f0f0&edit=1&snap=0&gabbacolors=1';
                     var rand = '&initmove=random';
-                    document.addEventListener("DOMContentLoaded", function () {
-                        AnimCube2(params);
-                    });
+                    AnimCube2(params);
                     function newCube(cmd) {
-                        if (cmd == 1) {
-                            // embaralhar
-                            AnimCube2("move=random");
-                        } else {
-                            // voltar ao estado inicial
-                            AnimCube2("move=reset");
-                        }
+                        var src = params;
+                        if (cmd == 1)
+                            src += rand;
+                        AnimCube2(src);
                     }
                 </script>
             </div>
