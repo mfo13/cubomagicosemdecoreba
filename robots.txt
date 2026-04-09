@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.cubomagicosemdecoreba.com.br/sitemap.xml
+Sitemap: https://cubomagicosemdecoreba.com.br/sitemap.xml
