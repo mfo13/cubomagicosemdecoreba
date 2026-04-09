@@ -105,11 +105,14 @@ async function initMenu(){
     });
 
     /* detectar página atual e manter o link do menu ativo*/
-    const currentPath = window.location.pathname.replace(/\/$/, "");
+    const currentPath = window.location.pathname.replace(/\/$/, "") || "/index.html";
     document.querySelectorAll(".menu a").forEach(link=>{
         try{
             const linkUrl = new URL(link.href, window.location.origin);
-            const linkPath = linkUrl.pathname.replace(/\/$/, "");
+            let linkPath = linkUrl.pathname.replace(/\/$/, "");
+
+            // trata raiz como index
+            if(linkPath === "") linkPath = "/index.html";
 
             if(linkPath === currentPath){
                 link.classList.add("active");
