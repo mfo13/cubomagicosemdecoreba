@@ -91,6 +91,10 @@ async function initMenu(){
     document.querySelectorAll(".menu a").forEach(link=>{
         try{
             const linkUrl = new URL(link.href, window.location.origin);
+
+            // IGNORA LINKS EXTERNOS
+            if(linkUrl.origin !== window.location.origin) return;
+
             const linkPath = linkUrl.pathname.replace(/\/$/, "");
 
             if(linkPath === currentPath){
