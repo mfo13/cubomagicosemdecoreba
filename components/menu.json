@@ -1,5 +1,5 @@
 [
-{"title":"Home", "link":"index.html"},
+{"title":"Home", "link":"/"},
 {"title":"Cubo 3x3x3", "link":"cubo-3x3x3.html",
     "children":[
     {"title":"1. Introdução", "link":"cubo-3x3x3/1-introducao.html"},
