@@ -139,16 +139,16 @@
                         Um comutador usa, basicamente, a combinação correta de movimentos de “vai e volta” (<a href="cubo-3x3x3/4-o-movimento-de-vai-e-volta.html">capítulo 4</a>) e “vai, troca e volta” (<a href="cubo-3x3x3/5-o-movimento-de-vai-troca-e-volta.html">capítulo 5</a>) de tal maneira que ocorra apenas uma comutação de peças.
                         </p>
                         <p>
-                        Para isso fazemos a intersecção de procedimentos de "vai e volta", de tal forma que a maior parte dos movimentos se cancele fazendo com que grande parte das peças volte à condição original, exceto poucas peças.
+                        Para isso fazemos a intersecção de procedimentos, de tal forma que os movimentos de um procedimento “cancelem” parcialmente os movimentos do outro procedimento, fazendo com que grande parte das peças volte à condição original.
                         </p>
                         <p>
                         Por exemplo:
                         </p>
                         <p>
-                        Procedimento 1:  vai - troca - volta - vai - destroca - volta (veja a Figura 9.3a)
+                        Procedimento 1:  desce - troca - volta - desce - destroca - volta (veja a Figura 9.3a)
                         </p>
                         <p>
-                        Procedimento 2:  reposicionamento - desfaz reposicionamento (veja a Figura 9.3b)
+                        Procedimento 2:  sobe - troca - volta - sobe - destroca - volta (veja a Figura 9.3b)
                         </p>
                         <p>
                         <i>
@@ -159,7 +159,7 @@
                     <div class="col-md-4 text-center my-3 px-3">
                         <div class="img-wrapper img-cubo">
                             <script>
-                                var movimento="{Figura 9.3a: Procedimento 1}{Figura 9.3a: F(vai)}F.{Figura 9.3a: D'(troca)}D'.{Figura 9.3a: F'(volta)}F'.{Figura 9.3a: F(vai)}F.{Figura 9.3a: D(destroca)}D.{Figura 9.3a: F'(volta)}F';{Figura 9.3b: Procedimento 2} {Figura 9.3b: U(reposicionamento)}U.{Figura 9.3b: U'(desfaz reposicionamento)}U'";
+                                var movimento="{Figura 9.3a: Procedimento 1}{Figura 9.3a: F(desce)}F.{Figura 9.3a: D'(troca)}D'.{Figura 9.3a: F'(volta)}F'.{Figura 9.3a: F(desce)}F.{Figura 9.3a: D(destroca)}D.{Figura 9.3a: F'(volta)}F';{Figura 9.3b: Procedimento 2}{Figura 9.3b: F'(sobe)}F'.{Figura 9.3b: U(troca)}U.{Figura 9.3b: F(volta)}F.{Figura 9.3b: F'(sobe)}F'.{Figura 9.3b: U'(destroca)}U'.{Figura 9.3b: F(volta)}F";
                                     setup="x2;x2",
                                 AnimCube3("initmove="+setup+"&move="+movimento+
                                             "&movetext=1\
@@ -185,47 +185,39 @@
                 Note que os procedimentos 1 e 2 separados são movimentos de “vai e volta”, tudo o que é feito é desfeito.
                 </p>
                 <p>
-                Vamos verificar calmamente o primeiro procedimento. Clique em iniciar (∣◁) na Figura 9.3a e, passo a passo, clique em avançar (<span class="forward_arrow">⧐</span>). 
-                Já sabemos (do <a href="cubo-3x3x3/5-o-movimento-de-vai-troca-e-volta.html">capítulo 5</a>) que o vai-troca-e-volta não afeta a camada superior, com exceção do canto que é intencionalmente trocado.
-                Infelizmente, as duas camadas inferiores ficam embaralhadas. Contudo, podemos consertar isso simplesmente revertendo o procedimento de vai-troca-e-volta.
+                Porém, há movimentos nos dois procedimentos que são equivalentes. Fazendo então a intersecção abaixo (movimentos equivalentes destacados em vermelho) o resultado é bem diferente. Devido a esta intersecção algumas trocas são mantidas enquanto o resto do cubo volta ao estado original.
                 </p>
-                <p>
-                Mas, em que isso ajuda se tudo volta à posição original?
-                </p>
-                <p>
-                É aí que entra a jogada de mestre! Antes de revertermos o movimento de vai-troca-e-volta nós mudamos o canto superior aplicando um reposicionamento. Mas não qualquer reposicionamento e sim um específico, que preserve as duas camadas inferiores.
-                Em otras palavras, um reposicionamento que movimente somente a camada superior que é paralela às outras duas, como ilustra a Figure 9.3b. Com esse reposicionamento colocamos outro canto no lugar do primeiro e então revertemos o vai-troca-e-volta.
-                Fazendo isso as camadas inferiores voltam à sua condição original exceto o primeiro canto. Perceba que a reversão do vai-troca-e-volta não afeta a camada superior. Então, finalmente, revertemos o reposicionamento e a camada superior retorna à sua condição inicial, exceto os dois cantos que participaram do reposicionamento.
-                </p>
-                <p>
-                Abracadabra! Encontramos um procedimento para trocar de lugar somente 3 cantos!
+                <div class="row justify-content-center">
+                    <div class="col-md-8">
+                        <img src="img/procedimentos.webp" alta="Intersecção de movimentos em procedimentos concorrentes" class="img-fluid">
+                    </div>
+                </div>
                 <div class="row justify-content-center">
                     <div class="col-md-8 my-3 px-3">
                         <p>
                         Para entender melhor veja o exemplo na Figura 9.4. Nesse caso queremos que o canto rosa tome o lugar do canto cinza. Como sabemos que os cantos são sempre trocados em trios, isso significa que, necessariamente, o canto cinza ocupará o lugar de outro, por exemplo, o verde, e este por sua vez o lugar do rosa.
                         </p>
                         <p>
-                        Vamos usar a camada superior (U) para o reposicionamento e a inferior (D) para a troca/destroca. A camada da frente (F) será usada para o “vai e volta” entre essas camadas. Os movimentos de “vai e volta” serão, necessariamente, F e F’ pois sabemos que a camada do “vai e volta” não pode conter a peça desejada. 
-                        A cada passo da seqüência abaixo clique em avançar (<span class="forward_arrow">⧐</span>) na Figura 9.4 para observar o que ocorre:
+                        Vamos usar as camadas superior (U) e inferior (D) para as trocas, e a camada da frente (F) para o “vai e volta”. Essa camada F é que fará a intersecção entre os dois procedimentos. Os movimentos de “vai e volta” serão, necessariamente, F e F’ pois sabemos que a camada do “vai e volta” não pode conter a peça desejada. A cada passo da seqüência abaixo clique em avançar (<span class="forward_arrow">⧐</span>) na Figura 9.4 para observar o que ocorre:
                         </p>
                         <ul>
                             <li>F (é o "vai" do procedimento 1)</li>
                             <li>D' (é a “troca” do procedimento 1)</li>
-                            <li>F' (é a “volta” do procedimento 1)</li>
-                            <li>U (é o “reposicionamento” do procedimento 2)</li>
-                            <li>F (é a repetição do “vai” do procedimento 1)</li>
+                            <li>F' (é a “volta” do procedimento 1 e ao mesmo tempo o “vai” do procedimento 2)</li>
+                            <li>U (é a “troca” do procedimento 2)</li>
+                            <li>F (é o “volta” do procedimento 2 e ao mesmo tempo a repetição do “vai” do procedimento 1)</li>
                             <li>D (é a “destroca” do procedimento 1)</li>
-                            <li>F' (é a repetição da “volta” do procedimento 1)</li>
-                            <li> U' (“desfaz o reposicionamento” do procedimento 2)</li>
+                            <li>F' (é “volta” do procedimento 1 e ao mesmo tempo a repetição do “vai” do procedimento 2)</li>
+                            <li> U' (é a “destroca” do procedimento 2)</li>
                         </ul>
                         <p>
-                        Para ver a sequência completa clique em iniciar (|◁) na Figura 9.4 e depois em <i>play</i> (▷).
+                        Obs.: note que outra “volta” do procedimento 2 não é necessária.
                         </p>
                     </div>
                     <div class="col-md-4 text-center my-3 px-3">
                         <div class="img-wrapper img-cubo">
                             <script>
-                                var movimento="{Figura 9.4: Comutador de 3 cantos}{Figura 9.4:   F(vai)}F.{Figura 9.4:   D'(troca)}D'.{Figura 9.4:   F'(volta)}F'.{Figura 9.4:   U(reposiciona)}U.{Figura 9.4:   F(vai)}F.{Figura 9.4:   D(destroca)}D.{Figura 9.4:   F'(volta)}F'.{Figura 9.4:   U'(desfaz reposicionamento)}U'";
+                                var movimento="{Figura 9.4: Comutador de 3 cantos}{Figura 9.4:   F(vai)}F.{Figura 9.4:   D'(troca)}D'.{Figura 9.4:   F'(volta)}F'.{Figura 9.4:   U(troca)}U.{Figura 9.4:   F(vai)}F.{Figura 9.4:   D(destroca)}D.{Figura 9.4:   F'(volta)}F'.{Figura 9.4:   U'(destroca)}U'";
                                     setup="x2",
                                 AnimCube3("initmove="+setup+"&move="+movimento+
                                             "&movetext=1\
@@ -246,20 +238,18 @@
                         </div>
                     </div>
                 </div>
-                <p>
-                Se você prestar atenção perceberá que a camada superior (U) e a camada inferior (D) na verdade são usadas para trocas e destrocas. A camada da frente (F) é usada para movimentos de vai-e-volta entre essas camadas U e D, que são paralelas entre si.
+
+                <p class="mt-3">
+                Resumindo: F ("vai") D' ("troca") F'("volta") U("troca") F ("vai") D ("destroca") F'("volta") U' ("destroca")  ou, simplesmente, F D' F' U F D F' U'  (vai - troca - volta - troca --- vai - destroca - volta - destroca)
                 </p>
                 <p>
-                Resumindo: F ("vai") D' ("troca") F'("volta") U("troca") F ("vai") D ("destroca") F'("volta") U' ("destroca")
-                </p>
-                <p>  
-                ou, simplesmente, F D' F' U F D F' U'  (vai - troca - volta - troca --- vai - destroca - volta - destroca)
+                Para ver a sequência completa clique em iniciar (|◁) na Figura 9.4 e depois em <i>play</i> (▷).
                 </p>
                 <p>
                 Perceba que não importa quais são os 3 cantos escolhidos. Você só precisa identificar quais são as <u>camadas paralelas para "troca/destroca"</u> e qual será a camada <u>perpendicular entre elas para os movimentos de “vai e volta”</u>. Sem decorar qualquer algoritmo.
                 </p>
                 <p>
-                Note também que a primeira peça a ir para o lugar de destino fica sozinha em uma camada de troca. A outra camada de troca (que corresponde ao reposicionamento inicial) contém as outras duas peças. Isso define qual será a camada perpendicular usada para os movimentos de “vai e volta”.
+                Note também que a primeira peça a ir para o lugar de destino fica sozinha em uma camada de troca. A outra camada de troca contém as outras duas peças. Isso define qual será a camada perpendicular usada para os movimentos de “vai e volta”.
                 </p>
 
                 <div class="row justify-content-center">
@@ -277,7 +267,7 @@
                     <div class="col-md-4 text-center my-3 px-3">
                         <div class="img-wrapper img-cubo">
                             <script>
-                                var movimento="{Figura 9.5}{Figura 9.5:   F(vai)}F.{Figura 9.5:   D'(troca)}D'.{Figura 9.5:   F'(volta)}F'.{Figura 9.5:   U(troca)}U.{Figura 9.5:   F(vai)}F.{Figura 9.5:   D(destroca)}D.{Figura 9.5:   F'(volta)}F'.{Figura 9.5:   U'(destroca)}U'";
+                                var movimento="{Figura 9.5}{Figura 9.5:   F(vai)}F {Figura 9.5:   D'(troca)}D' {Figura 9.5:   F'(volta)}F' {Figura 9.5:   U(troca)}U {Figura 9.5:   F(vai)}F {Figura 9.5:   D(destroca)}D {Figura 9.5:   F'(volta)}F' {Figura 9.5:   U'(destroca)}U'";
                                     setup="x2",
                                 AnimCube3("initmove="+setup+"&move="+movimento+
                                             "&movetext=1\
