@@ -19,6 +19,26 @@ async function init(){
     await loadComponent("footer","components/footer.html");
     await loadMenuData(); // carrega estrutura do menu aqui
     initMenu(); // chama só aqui
+    // inicia o goatcounter depois de tudo carregado
+    initGoatCounter();
+    
+}
+
+// Função para implantar o script do goatcounter
+function initGoatCounter() {
+    // Evita carregar no localhost / desenvolvimento
+    if (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1") {
+        return;
+    }
+    // Evita carregar em duplicidade
+    if (document.querySelector('script[data-goatcounter]')) return;
+
+    const script = document.createElement("script");
+    script.dataset.goatcounter = "https://cubomagicosemdecoreba.goatcounter.com/count";
+    script.async = true;
+    script.src = "//gc.zgo.at/count.js";
+
+    document.head.appendChild(script);
 }
 
 init();
